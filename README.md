@@ -17,7 +17,7 @@ I optimized the index.html by :
 Part 2: Optimize Frames per Second in pizza.html
 Ensuring a consistent frame rate of 60fps 
 
-1. reducing the number of pizzas created to 20 (line 530)
+1. reducing the number of pizzas created to 20 (line 531)
 2. usng translate instead of basic left positioing (line 510): 
 items[i].style.transform = 'translateX(' + (100*phase) + 'px)';
 3. moving the calculation of a big number ouside the loop (line 506) : 
