@@ -17,7 +17,7 @@ The index page originally had a Google PageSpeed score less than 90 (85/100) for
 Added the [HTML async attribute](https://developer.mozilla.org/en-US/docs/Games/Techniques/Async_scripts) to all script 
 ######Images
 
-Resized images that were too large and compressed all images with the [Kraken](https://kraken.io/web-interface) image compression tool.
+######Resized images that were too large and compressed all images with the [Kraken](https://kraken.io/web-interface) image compression tool.
 
 **********************************************************************
 
