@@ -6,7 +6,7 @@ Website Performance Optimization  project
 
 ###Index Page
 
-The index page originally had a Google PageSpeed score less tha 90 for mobile. After making changes the score increased to [96 / 100]( the only thing that is preventing a score of 100/100 is Google's own analytics script.)
+The index page originally had a Google PageSpeed score less than 90 (85/100) for mobile. After making changes the score increased to [96 / 100]( the only thing that is preventing a score of 100/100 is Google's own analytics script.)
 
 ######CSS
 
