@@ -448,18 +448,18 @@ var resizePizzas = function(size) {
     return dx;
   }
 
-  // None of the calculations actually needed to be done in the for loop.
-  // By moving them outside of the loop, run speed in increased significantly.
-  var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[0], size);
-  var newwidth = (document.querySelectorAll(".randomPizzaContainer")[0].offsetWidth + dx) + 'px';
-  var pizzas = document.querySelectorAll(".randomPizzaContainer");
-  var numPizzas = document.querySelectorAll(".randomPizzaContainer").length;
-
-  // Iterates through pizza elements on the page and changes their widths
+    // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < numPizzas; i++) {
-      pizzas[i].style.width = newwidth;
-    }
+      //moved these lines out of the 4 loop, saving more than 100 ms
+      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[1], size);
+      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[1].offsetWidth + dx) + 'px';
+      var pizzacount = document.querySelectorAll(".randomPizzaContainer").length;
+
+      for (var i = 0; i < pizzacount; i++) {
+
+          // previously the slower document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+          document.getElementsByClassName("randomPizzaContainer")[i].style.width = newwidth;
+      }
   }
 
   changePizzaSizes(size);
@@ -473,9 +473,11 @@ var resizePizzas = function(size) {
 
 window.performance.mark("mark_start_generating"); // collect timing data
 
+// Outside the for statement/loop I declare the variable pizzasDiv,so the function only makes one DOM call
+var pizzasDiv
 // This for-loop actually creates and appends all of the pizzas when the page loads
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
+  pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -513,9 +515,12 @@ function updatePositions() {
   var scrollPosition = (document.body.scrollTop / 1250);
   var itemsLength = items.length;
 
+    // Outside the for statement/loop I declare the variable phase,so the function only makes one DOM call
+  var phase
   for (var i = 0; i < itemsLength; i++) {
-    var phase = Math.sin(scrollPosition + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+   phase = Math.sin(scrollPosition + (i % 5));
+   items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+      
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -531,19 +536,26 @@ function updatePositions() {
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
 
-// Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
-  var s = 256;
-  for (var i = 0; i < 200; i++) {
-    var elem = document.createElement('img');
-    elem.className = 'mover';
-    elem.src = "images/pizza.png";
-    elem.style.height = "100px";
-    elem.style.width = "73.333px";
-    elem.basicLeft = (i % cols) * s;
-    elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
-  }
-  updatePositions();
+// Generates the sliding pizzas when the page loads.AND IS SLOWING FPS!!!
+//was document.addEventListener('DOMContentLoaded', function() {
+// only need to make the pizzas one time.
+document.addEventListener('DOMContentLoaded', function() {	
+    var cols = 8;
+    var s = 256;
+    //** Outside the loop */
+    var movingPizzas = document.getElementById('movingPizzas1');
+    for (var i = 0; i < 100; i++) {
+        console.log(i);
+        var elem = document.createElement('img');
+        elem.className = 'mover';
+        elem.src = "images/pizza.png";
+        elem.style.height = "100px";
+        elem.style.width = "73.333px";
+        elem.basicLeft = (i % cols) * s;
+        elem.style.top = (Math.floor(i / cols) * s) + 'px';
+        movingPizzas1.appendChild(elem);
+    }
+    updatePositions();
 });
+
+document.addEventListener('DOMContentLoaded', function () { console.log("dom content loaded"); });
