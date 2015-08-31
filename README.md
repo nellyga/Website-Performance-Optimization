@@ -154,7 +154,7 @@ You can view the optimized website at <a href="https://github.com/nellyga/Websit
 
  Alternatively, you can <a href="https://github.com/nellyga/Website-Performance-Optimization/">download the project files here</a>.  Click the buttom "Donwload Zip"
 
-Timeline frame rate of 60fps images
+Timeline frame rate of 60fps image
 https://github.com/nellyga/Website-Performance-Optimization/blob/master/img/Pizza60FPS.PNG
  
 
