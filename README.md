@@ -112,7 +112,7 @@ watched https://plus.google.com/u/0/events/c8eah6f0d0t9eretebpm7dqi0ok?authkey=C
 Declaring the elem variable (var elem;) outside the loop will prevent it from being created every time the loop is executed.
 LINE 542
 
-I fixed There is a small typo here as the movingPizzas1 variable does not exist; the movingPizzas does (line 544-254).
+#####I fixed There is a small typo here as the movingPizzas1 variable does not exist; the movingPizzas does (line 544-254).
 --------------------------------------------------------------------------------------------------------
 Running instructions
 ************************************************************************************************************
