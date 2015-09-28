@@ -98,7 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     updatePositions();
 });
-
+I chaged line 553 for 
+elem.Left = (i % cols) * s;
+elem.basicLeft = (i % cols) * s;
 ###################################################################################################################
 
 for loop was recounting the pizzas.
