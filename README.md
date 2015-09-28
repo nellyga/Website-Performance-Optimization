@@ -114,7 +114,7 @@ watched https://plus.google.com/u/0/events/c8eah6f0d0t9eretebpm7dqi0ok?authkey=C
 Declaring the elem variable (var elem;) outside the loop will prevent it from being created every time the loop is executed.
 LINE 542
 
-I fixed There is a small typo here as the movingPizzas1 variable does not exist; the movingPizzas does (line 544-254).
+#####I fixed There is a small typo here as the movingPizzas1 variable does not exist; the movingPizzas does (line 544-254).
 --------------------------------------------------------------------------------------------------------
 timeline ilustration
 https://github.com/nellyga/Website-Performance-Optimization/blob/master/img/Pizza60FPS.PNG
@@ -155,10 +155,19 @@ views
 ```
 Launching the website
 ---------------------
-You can view the optimized website at <a href="https://github.com/nellyga/Website-Performance-Optimization.git</a>
+You can view the optimized website at <a href="https://github.com/nellyga/Website-Performance-Optimization/">Website Optimization</a>
 
+<<<<<<< HEAD
  Alternatively, you can <a href="https://github.com/nellyga/Website-Performance-Optimization/">download the project files here</a>.
  Click the buttom "Donwload Zip".
+=======
+ Alternatively, you can <a href="https://github.com/nellyga/Website-Performance-Optimization/">download the project files here</a>.  Click the buttom "Donwload Zip"
+
+Timeline frame rate of 60fps image
+https://github.com/nellyga/Website-Performance-Optimization/blob/master/img/Pizza60FPS.PNG
+ 
+
+>>>>>>> origin/master
  
 
 **********************************************************************************************************************
