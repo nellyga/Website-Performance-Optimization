@@ -403,14 +403,14 @@ var resizePizzas = function (size) {
     function changeSliderLabel(size) {
         switch (size) {
             case "1":
-                //document.querySelector("#pizzaSize").innerHTML = "Small";
-                return 0.25;
+                document.querySelector("#pizzaSize").innerHTML = "Small";
+                break;;
             case "2":
-                //document.querySelector("#pizzaSize").innerHTML = "Medium";
-                return 0.3333;
+                document.querySelector("#pizzaSize").innerHTML = "Medium";
+                break;;
             case "3":
-                //document.querySelector("#pizzaSize").innerHTML = "Large";
-                return 0.5;
+                document.querySelector("#pizzaSize").innerHTML = "Large";
+                break;;
             default:
                 console.log("bug in changeSliderLabel");
         }
@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //console.log(i);
         elem= document.createElement('img');
         elem.className = 'mover';
-        elem.src = "images/pizza.png";
+        elem.src = "images/pizzabg.png";
         elem.style.height = "100px";
         elem.style.width = "73.333px";
         elem.style.left = (i % cols) * s + 'px';

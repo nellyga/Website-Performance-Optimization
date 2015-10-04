@@ -98,7 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     updatePositions();
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 I chaged line 553 for 
 elem.Left = (i % cols) * s;
 elem.basicLeft = (i % cols) * s;
